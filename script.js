@@ -1,4 +1,4 @@
-﻿// Smooth scroll for nav links
+// Smooth scroll for nav links
 document.querySelectorAll('nav a').forEach(function (a) {
   a.addEventListener('click', function (e) {
     const href = a.getAttribute('href');
@@ -44,3 +44,18 @@ function onScroll() {
 }
 window.addEventListener('scroll', onScroll);
 onScroll();
+
+
+// Project cards: reveal details on hover/click
+var cards = document.querySelectorAll('.project-card');
+cards.forEach(function (card) {
+  card.addEventListener('mouseenter', function () {
+    card.classList.add('open');
+  });
+  card.addEventListener('mouseleave', function () {
+    card.classList.remove('open');
+  });
+  card.addEventListener('click', function () {
+    card.classList.toggle('open');
+  });
+});

@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #343434;
   --card: #4d4d4d;
   --accent: #e11d48;
@@ -37,9 +37,52 @@ section h2 {
   border-radius: 12px;
   padding: 18px;
 }
-.card h3 { margin: 0 0 10px; color: var(--accent); }
+.project-card {
+  cursor: pointer;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-header h3 {
+  margin: 0;
+}
+.chevron {
+  font-size: 1.2rem;
+  color: var(--accent-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.project-card.open .chevron {
+  transform: rotate(180deg);
+}
+.card-detail {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+.project-card.open .card-detail {
+  max-height: 600px;
+  opacity: 1;
+}
+.card-detail > :first-child {
+  margin-top: 8px;
+}
 .card ul { margin: 0; padding-left: 18px; color: var(--muted); }
 .skill { display: inline-block; background: #343434; border: 1px solid #6b6b6b; padding: 6px 14px; border-radius: 20px; margin: 4px 6px 4px 0; font-size: 0.9rem; }
+.project-card .card-detail a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
 .contact a { display: inline-block; margin-right: 12px; padding: 10px 16px; border: 1px solid var(--accent); border-radius: 8px; }
 footer { text-align: center; color: var(--muted); padding: 30px 0; font-size: 0.9rem; }
 
